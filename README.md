@@ -25,20 +25,24 @@ Dica: utilize as tags* `<table>`, `<tr>`, `<td>`
 
 ## Elementos HTML
 
-### Manual de referência
+### Manual de Programação
 
-Você deverá implementar uma página web que sirva como material de referência dos elementos HTML. Mais especificamente, sua página web deverá abordar os seguintes assuntos:
+Ajude os calouros no aprendizado de programação em linguagem C!
 
-* HTML: introdução e estrutura básica
-* HTML: Principais elementos
-  * Elementos de texto
-  * Elementos Containers
-  * Elementos Formulários
-  * Elementos multimedia
-* Referência bibliográfica
+Você deverá implementar uma página em HTML que explique as instruções básicas da linguagem:
 
-Para cada elemento a ser explicado na seção **HTML: Principais elementos**, deverá ser mostrado pelo menos um exemplo de utilização daquele elemento.
+* Introdução 
+* Variáveis e expressões matemáticas
+* Estruturas Condicionais
+* Estruturas de Repetição
+* Como executar um programa em C
 
-Além disso, a página deverá conter um índice que irá redirecionar para seção desejada (utilize mecanismos de [ancoragem](http://stackoverflow.com/questions/484719/html-anchors-with-name-or-id)).
+Os tópicos deverão se entitulados utilizando o elemento `<h2>`, e separados por *containers*.
 
-*Dica: Documente bem essa página, pois ela poderá ser sua fonte de consulta na prova!!*
+Ainda, cada seção deverá possuir pelo menos um exemplo de código que ilustra o uso do tópico selecionado. 
+
+### Formulário de cadastro
+
+Implemente um formulário HTML conforme a imagem a seguir:
+
+![Formulário](form.png)
