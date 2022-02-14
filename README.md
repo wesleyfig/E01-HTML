@@ -21,7 +21,7 @@ Elabore uma lista de exercícios com cinco questões de múltipla escolha, que a
 As questões deverão ter 4 alternativas, e apenas uma deverá ser a correta.
 Nomeie a página como `prova.html`.
 
-Dica: utilize as tags `<ol>` e `<ul>`.
+Dica: utilize as tags `<ol>` para questões, e `<ul>` para alternativas.
 
 
 ## T3: Prova de Múltipla Escolha - Respostas
