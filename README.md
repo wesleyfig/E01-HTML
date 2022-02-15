@@ -35,7 +35,7 @@ Dica: utilize as tags `<table>`, `<tr>`, `<td>`.
 
 Ajude os calouros no aprendizado de programação em linguagem C!
 
-Escolha um dos tópicos abaixo e implemente uma página chamada `tutorial_c.html` explicando o tópico escolhido.
+Escolha um dos tópicos abaixo e implemente uma página chamada `tutorial_c.html` explicando um dos tópicos escolhidos:
 
 * Variáveis e expressões matemáticas
 * Estruturas Condicionais
