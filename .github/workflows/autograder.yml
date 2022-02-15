@@ -28,7 +28,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            $FILES_PATH/*.html
+            ${{ env.FILES_PATH }}/*.html
             ${{ github.workspace }}/.github/actions/html-elements/
           key: ${{ runner.os }}-${{ github.run_id }}  
 
@@ -46,7 +46,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            $FILES_PATH/*.html
+            ${{ env.FILES_PATH }}/*.html
             ${{ github.workspace }}/.github/actions/html-elements/
           key: ${{ runner.os }}-${{ github.run_id }}  
 
