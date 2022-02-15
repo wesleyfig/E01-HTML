@@ -1,0 +1,62 @@
+name: Correção
+
+on:
+  pull_request:
+    types: [synchronize, opened, reopened ]
+
+jobs:
+  setup:
+    name: Setup do projeto
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Checkout do repositório
+        uses: actions/checkout@v2
+
+      - name: Preparação dos testes
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'npm'
+
+      - name: Configuração do ambiente de correção
+        run: | 
+          cp ${{ github.workspace }}/.github/actions/html-elements/* ${{ github.workspace }}/
+          npm install
+
+      - name: Caching do projeto
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ github.workspace }}/*.html
+            ${{ github.workspace }}/tests/
+            ${{ github.workspace }}/node_modules/
+            ${{ github.workspace }}/package-lock.json
+            ${{ github.workspace }}/package.json
+          key: ${{ runner.os }}-${{ github.run_id }}  
+
+  grading-html-elements:
+    name: "Exercício: Elementos HTML"
+    needs: setup
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        task: [ "T1", "T2", "T3", "T4", "T5" ]
+
+
+    steps:
+      - name: Caching do projeto
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ github.workspace }}/*.html
+            ${{ github.workspace }}/tests/
+            ${{ github.workspace }}/node_modules/
+            ${{ github.workspace }}/package-lock.json
+            ${{ github.workspace }}/package.json
+          key: ${{ runner.os }}-${{ github.run_id }}  
+
+      - name: "${{ matrix.task }}"
+        if: ${{ always() }}
+        run: npm test -- -t "${{ matrix.task }}"
+    
