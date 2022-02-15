@@ -16,16 +16,16 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v2
 
+      - name: Configuração do ambiente de correção
+        run: | 
+          cp ${{ github.workspace }}/.github/actions/html-elements/* ${{ github.workspace }}/
+          npm install
+
       - name: Preparação dos testes
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
           cache: 'npm'
-
-      - name: Configuração do ambiente de correção
-        run: | 
-          cp ${{ github.workspace }}/.github/actions/html-elements/* ${{ github.workspace }}/
-          npm install
 
       - name: Caching do projeto
         uses: actions/cache@v2
