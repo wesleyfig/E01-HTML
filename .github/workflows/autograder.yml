@@ -4,6 +4,9 @@ on:
   pull_request:
     types: [synchronize, opened, reopened ]
 
+env:
+  FILES_PATH: ${{ github.workspace }}
+
 jobs:
   setup:
     name: Setup do projeto
@@ -28,7 +31,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ${{ github.workspace }}/*.html
+            $FILES_PATH/*.html
             ${{ github.workspace }}/tests/
             ${{ github.workspace }}/node_modules/
             ${{ github.workspace }}/package-lock.json
