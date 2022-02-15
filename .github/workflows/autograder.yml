@@ -4,9 +4,6 @@ on:
   pull_request:
     types: [synchronize, opened, reopened ]
 
-env:
-  FILES_PATH: ${{ github.workspace }}
-
 jobs:
   setup:
     name: Setup do projeto
@@ -16,26 +13,20 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v2
 
-      - name: Configuração do ambiente de correção
-        run: | 
-          cp --verbose -r ${{ github.workspace }}/.github/actions/html-elements/* ${{ github.workspace }}/
-          npm install
-
-      - name: Preparação dos testes
+      - name: Preparação do ambiente
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
-          cache: 'npm'
+
+      - name: Configuração das dependências
+        run: npm --prefix ${{ github.workspace }}/.github/actions/html-elements install
 
       - name: Caching do projeto
         uses: actions/cache@v2
         with:
           path: |
-            $FILES_PATH/*.html
-            ${{ github.workspace }}/tests/
-            ${{ github.workspace }}/node_modules/
-            ${{ github.workspace }}/package-lock.json
-            ${{ github.workspace }}/package.json
+            ${{ github.workspace }}/*.html
+            ${{ github.workspace }}/.github/actions/html-elements/
           key: ${{ runner.os }}-${{ github.run_id }}  
 
   grading-html-elements:
@@ -52,11 +43,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            $FILES_PATH/*.html
-            ${{ github.workspace }}/tests/
-            ${{ github.workspace }}/node_modules/
-            ${{ github.workspace }}/package-lock.json
-            ${{ github.workspace }}/package.json
+            ${{ github.workspace }}/*.html
+            ${{ github.workspace }}/.github/actions/html-elements/
           key: ${{ runner.os }}-${{ github.run_id }}  
 
       - name: "${{ matrix.task }}"
