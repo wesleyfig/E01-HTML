@@ -18,7 +18,7 @@ jobs:
 
       - name: Configuração do ambiente de correção
         run: | 
-          cp ${{ github.workspace }}/.github/actions/html-elements/* ${{ github.workspace }}/
+          cp -r ${{ github.workspace }}/.github/actions/html-elements/* ${{ github.workspace }}/
           npm install
 
       - name: Preparação dos testes
