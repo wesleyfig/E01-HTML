@@ -4,6 +4,9 @@ on:
   pull_request:
     types: [synchronize, opened, reopened ]
 
+env:
+  FILES_PATH: ${{ github.workspace }}
+
 jobs:
   setup:
     name: Setup do projeto
@@ -25,7 +28,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ${{ github.workspace }}/*.html
+            $FILES_PATH/*.html
             ${{ github.workspace }}/.github/actions/html-elements/
           key: ${{ runner.os }}-${{ github.run_id }}  
 
@@ -43,7 +46,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ${{ github.workspace }}/*.html
+            $FILES_PATH/*.html
             ${{ github.workspace }}/.github/actions/html-elements/
           key: ${{ runner.os }}-${{ github.run_id }}  
 
