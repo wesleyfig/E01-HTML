@@ -53,6 +53,6 @@ Necessáriamente, uma dessas seções deverá ser entitulada **Exemplo** e dever
 
 ## T5: Formulário de cadastro
 
-Implemente um formulário HTML conforme a imagem a seguir:
+Crie um arquivo `formulario.html` e implemente um formulário HTML conforme a imagem a seguir:
 
 ![Formulário](form.png)
