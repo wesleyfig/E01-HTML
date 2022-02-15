@@ -18,7 +18,7 @@ jobs:
 
       - name: Configuração do ambiente de correção
         run: | 
-          cp -r ${{ github.workspace }}/.github/actions/html-elements/* ${{ github.workspace }}/
+          cp --verbose -r ${{ github.workspace }}/.github/actions/html-elements/* ${{ github.workspace }}/
           npm install
 
       - name: Preparação dos testes
@@ -52,7 +52,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ${{ github.workspace }}/*.html
+            $FILES_PATH/*.html
             ${{ github.workspace }}/tests/
             ${{ github.workspace }}/node_modules/
             ${{ github.workspace }}/package-lock.json
