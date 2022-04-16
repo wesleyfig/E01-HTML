@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang ="pt-br">
+    <head>
+        <title> Tutorial Estruturas de Repetição </title>
+    </head>
+    <h1> Estruturas de Repetição </h1>
+    <div>
+        <h2> Repetição com teste no início </h2>
+        <p> Repete o bloco de operações enquanto a condição for verdadeira. </p>  
+            <code>
+                ... <br>
+                while (condição){ <br>
+                    bloco de operações <br>
+                } <br>
+                ... <br> <br>
+            </code>
+        <p> <b> Passos: </b> </p> 
+            <ol>
+                <li> avalia a condição: </li>
+                <ul>
+                    <li> se verdadeiro, executa o bloco de operações; </li>
+                    <li> caso contrário, termina o laço. </li>
+                </ul>
+            </ol>
+        <p> <b> Exemplo: </b> </p>
+        <p> Faça um programa que  mostre na tela os números de 1 a 100: </p>
+        <code>
+            ... <br>
+            int numero = 1; <br>
+            while (numero <= 100){ <br>
+                printf("%d", numero); <br>
+            } <br>
+            ... </br>
+        </code>  
+        <p> Observe que a variável numero é usada como um contador, ou seja,
+            vai contar quantas vezes o loop será executado. </p>  
+    </div>
+    <div>
+        <h2> Repetição com teste no final </h2>
+        <p> O comando do-while: é utilizado sempre que o bloco de comandos
+            deve ser executado ao menos uma vez, mesmo que a condição seja
+            falsa. </p>
+        <code> 
+            ... <br>
+            do { <br>
+                bloco de operações <br>
+            } while (condição) <br>
+            ... <br>
+        </code>    
+        <p> <b> Passos </b>:</p>
+        <ol> 
+            <li> executa o bloco de operações; </li>
+            <li> avalia a condições: </li>
+            <ul>
+                <li> se verdadeiro, re-executa o bloco de operações; </li>
+                <li> caso contrário, termina o laço. </li>
+            </ul>
+        </ol>
+        <b> Exemplo: </b>
+        <p> Faça um programa que exiba um menu ao usuário e receba uma opção entre 1 e 3: </p>
+        <code> 
+            int i; <br>
+            do { <br> 
+                printf("Escolha uma opção:\n") <br>
+                printf("(1) opção 1\n") <br>
+                printf("(2) opção 2\n") <br>
+                printf("(3) opção 3\n") <br>
+                scanf("%d", &i); <br>
+            } while ((i < 1) || (i > 3)); <br>
+        </code>
+    </div>
+    <div>    
+        <h2> Repetição contada </h2>
+        <code>
+            ... <br>
+            for (inicialização; condição; incremento){ <br>
+                bloco de operações; <br>
+            } <br>
+            ... <br>
+        </code>
+        <ol> 
+            <li> Inicialização: inicia uma variável;</li>
+            <li> avalia a condição. Se for verdadeira, executa o bloco de
+                operações, senão encerra o laço;</li>
+            <li> Incremento: ao término do bloco de operações, incrementa o
+                valor da variável;</li>    
+            <li> repete o processo até que a condição seja falsa.</li>    
+        </ol>
+        <p> <b> Passos </b> </p>
+        <ol>
+            <li> Executa a inicialização; </li>
+            <li> avalia a condição: </li>
+            <ul> 
+                <li> se verdadeiro, executa o bloco de operações; </li>
+                <li> caso contrário, termina o laço.</li>
+            </ul>
+            <li> Executa o incremento e volta para (2).</li>
+        </ol>
+        <p>Em geral, utilizamos o comando for quando precisamos ir de
+            um valor incial até um valor final; </p>
+        <p> Para tanto, utilizamos uma variável para realizar a contagem. </p>
+        <b> Exemplo: </b>
+        <p> Faça um programa que  mostre na tela os números de 1 a 100: </p>
+        <code>
+            ... <br>
+            int i; <br>
+            for (i=1; i<=100; i++){ <br>
+                printf("%d \n", i); <br>
+            } <br>
+            ... <br>
+        </code>
+    </div>
+    <div>
+        <h2> Como sair prematuramente de um loop</h2>
+        <ol>
+            <li> <b>break:</b> Força o loop terminar;
+            Vai para a linha imediatamente depois do fim do loop. </li>
+            <li>
+                <b>continue:</b> Pula para a próxima iteração;
+                Volta para o início do loop sem executar as instruções que estão
+                abaixo do continue. O incremento é executado normalmente. </li>
+            <li> <b>exit:</b> Finaliza o programa.
+                Não deve ser utilizado a menos que você tenha certeza que a
+                única solução é encerrar seu programa neste ponto. </li>    
+        </ol>
+    </div>
+</html>
